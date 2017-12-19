@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ResponseProject</title>
+    <title>Response</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -19,14 +19,15 @@
       <% else %>
         <div id="signed_in">
           <a href='<%= edit_user_registration_path %>' >
-          <div class="profile-photo" style='background-image: url(<%=current_user.profile_photo%>);'>
-        </div>
           <%= "#{current_user.first_name}" %>
         </a>
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'util-button' %>
         </div>
       <% end %>
       </div>
+    </div>
+    <div>
+      <h1>Body Shop Scheduling Solutions</h1>
     </div>
     <%= yield %>
   </body>
