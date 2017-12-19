@@ -3,7 +3,9 @@ import { Link } from 'react-router';
 
 const HeaderScreen = props =>{
   return(
-    <div>Hello You</div>
+    <div>
+      {props.children}
+    </div>
   );
 };
 
