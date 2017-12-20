@@ -12,10 +12,17 @@ Rails.application.routes.draw do
 end
 
   resources :vehicles, only: [:index, :show, :new, :create]
+  resources :technicians, only: [:index, :show, :new, :create]
 
   namespace :api do
     namespace :v1 do
       resources :vehicles, only: [:index, :show, :new, :create]
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      resources :technicians, only: [:index, :show, :new, :create]
     end
   end
 end

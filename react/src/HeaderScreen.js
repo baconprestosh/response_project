@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router';
+import BackButton from './components/BackButton';
 
 const HeaderScreen = props =>{
   return(
     <div>
-      {props.children}
+      <div>
+        <BackButton />
+      </div>
+      <div>
+        {props.children}
+      </div>
     </div>
   );
 };
