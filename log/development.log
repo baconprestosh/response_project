@@ -8908,3 +8908,505 @@ Processing by Devise::RegistrationsController#new as HTML
 Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-12-19 19:52:51 -0500
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (75.5ms)
+Completed 200 OK in 1964ms (Views: 1908.8ms | ActiveRecord: 24.6ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-12-19 19:53:39 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/zwQyNH13CFoVnfeGcQlj4XIaXZZInRSQZGQtHJesb87uFbv2iDxSPlvogiLuaei1vS3TBhO88K4GlZVO0Hknw==", "user"=>{"email"=>"bob@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (25.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bob@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (14.3ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_created_at", "2017-12-20 00:53:39.461985"], ["updated_at", "2017-12-20 00:53:39.463425"], ["id", 2]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 6], ["current_sign_in_at", "2017-12-20 00:53:39.487714"], ["last_sign_in_at", "2017-12-19 21:22:48.308192"], ["updated_at", "2017-12-20 00:53:39.488530"], ["id", 2]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 254ms (ActiveRecord: 48.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-19 19:53:39 -0500
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/vehicles" for 127.0.0.1 at 2017-12-19 19:53:40 -0500
+Processing by Api::V1::VehiclesController#index as */*
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mVehicle Load (12.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (24.11ms)
+Completed 200 OK in 61ms (Views: 38.5ms | ActiveRecord: 18.5ms)
+
+
+Started GET "/api/v1/vehicles/1" for 127.0.0.1 at 2017-12-19 19:53:51 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.32ms)
+Completed 200 OK in 12ms (Views: 7.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/vehicles" for 127.0.0.1 at 2017-12-19 19:53:54 -0500
+Processing by Api::V1::VehiclesController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.25ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/vehicles/2" for 127.0.0.1 at 2017-12-19 19:53:55 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.3ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/vehicles" for 127.0.0.1 at 2017-12-19 19:53:56 -0500
+Processing by Api::V1::VehiclesController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.07ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/vehicles/3" for 127.0.0.1 at 2017-12-19 19:53:58 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.3ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/vehicles" for 127.0.0.1 at 2017-12-19 19:53:59 -0500
+Processing by Api::V1::VehiclesController#index as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.15ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/v1/vehicles" for 127.0.0.1 at 2017-12-19 19:54:46 -0500
+Processing by Api::V1::VehiclesController#create as */*
+  Parameters: {"model_year"=>"2014", "vehicle_make"=>"Subaru", "vehicle_model"=>"Impreza", "vehicle"=>{"model_year"=>"2014", "vehicle_make"=>"Subaru", "vehicle_model"=>"Impreza"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.9ms)[0m  [1m[32mINSERT INTO "vehicles" ("model_year", "vehicle_make", "vehicle_model", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["model_year", "2014"], ["vehicle_make", "Subaru"], ["vehicle_model", "Impreza"], ["created_at", "2017-12-20 00:54:46.862127"], ["updated_at", "2017-12-20 00:54:46.862127"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.35ms)
+Completed 200 OK in 19ms (Views: 2.6ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/api/v1/vehicles" for 127.0.0.1 at 2017-12-19 19:54:46 -0500
+Processing by Api::V1::VehiclesController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (13.08ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/vehicles/9" for 127.0.0.1 at 2017-12-19 19:54:48 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.32ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/vehicles/9" for 127.0.0.1 at 2017-12-19 19:54:58 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.28ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/api/v1/vehicles/9" for 127.0.0.1 at 2017-12-19 19:55:03 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/vehicles/9"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/vehicles/9" for 127.0.0.1 at 2017-12-19 19:55:10 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.56ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/vehicles/9" for 127.0.0.1 at 2017-12-19 19:55:19 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.33ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/api/v1/vehicles/9" for 127.0.0.1 at 2017-12-19 19:55:26 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/vehicles/9"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/vehicles/9" for 127.0.0.1 at 2017-12-19 19:55:33 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.35ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/vehicles" for 127.0.0.1 at 2017-12-19 19:58:10 -0500
+Processing by Api::V1::VehiclesController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.03ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/vehicles/1" for 127.0.0.1 at 2017-12-19 19:58:50 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.3ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/vehicles" for 127.0.0.1 at 2017-12-19 19:58:56 -0500
+Processing by Api::V1::VehiclesController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.84ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-12-19 20:03:01 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oao7SsauKZJjc7KL2bIFYlElIDpahk+O4ZzLyZZ3VDCmPdN+hKFeF5MaHns2tIfxr7PqMC+ZHcKkyOjH/Q8BPw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_created_at", nil], ["updated_at", "2017-12-20 01:03:01.145264"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-19 20:03:01 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-12-19 20:03:05 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hG9PQMT1cim2C1BELQtFMKGeXcrGRCbJgxicArZLrCOhuSnkt73bizezSt9ekBXAKBOA5WgS9wueEcP3VWRUfg==", "user"=>{"email"=>"jason.prestosh@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jason.prestosh@yahoo.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.6ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hG9PQMT1cim2C1BELQtFMKGeXcrGRCbJgxicArZLrCOhuSnkt73bizezSt9ekBXAKBOA5WgS9wueEcP3VWRUfg==", "user"=>{"email"=>"jason.prestosh@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 172ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-12-19 20:03:08 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-12-19 20:03:37 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dNBho7/NY4opLue0Dn75Mc0xL5MSHY/LL4TPnWgC+VpRBgcHzIXKKKiW/S995anBRLzyvLxLXgkyjZBoiy0BBw==", "user"=>{"first_name"=>"Jason", "last_name"=>"Prestosh", "email"=>"jason.prestosh@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jason.prestosh@yahoo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Jason"], ["last_name", "Prestosh"], ["email", "jason.prestosh@yahoo.com"], ["encrypted_password", "$2a$11$T22DtlSE1jUFnVqVaiDy/.eSNPOolujOusFgDFcpJV9TZif1fSv.."], ["created_at", "2017-12-20 01:03:37.828148"], ["updated_at", "2017-12-20 01:03:37.828148"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2017-12-20 01:03:37.830748"], ["last_sign_in_at", "2017-12-20 01:03:37.830748"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2017-12-20 01:03:37.831442"], ["id", 3]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 171ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-19 20:03:37 -0500
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/vehicles" for 127.0.0.1 at 2017-12-19 20:03:38 -0500
+Processing by Api::V1::VehiclesController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.59ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-12-19 20:03:55 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mC6daQYlEzPOVoR/TKxs8xLiUM7vM6U0lxoLfvZCnoK9+PvNdW26kU/unuQ/NzwDm2+N4UFldPaKE1SLFW1m3w=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-19 20:03:55 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-12-19 20:03:58 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dM4Bk657Tolf+LvllFFBM15f5JfktaGQVDzvFPmG5p3rNH/yPrUwpiFs9NwtrOShfsgn1So/kTAnMDfq/pz2uA==", "user"=>{"email"=>"jason.prestosh@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jason.prestosh@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", "2017-12-20 01:03:58.504564"], ["sign_in_count", 2], ["updated_at", "2017-12-20 01:03:58.505611"], ["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 153ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-19 20:03:58 -0500
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/vehicles" for 127.0.0.1 at 2017-12-19 20:03:58 -0500
+Processing by Api::V1::VehiclesController#index as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.79ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/vehicles/6" for 127.0.0.1 at 2017-12-19 20:04:00 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.44ms)
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/vehicles/6" for 127.0.0.1 at 2017-12-19 20:04:02 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.29ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/vehicles/6" for 127.0.0.1 at 2017-12-19 20:04:06 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.3ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/vehicles" for 127.0.0.1 at 2017-12-19 20:04:11 -0500
+Processing by Api::V1::VehiclesController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.13ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/vehicles/9" for 127.0.0.1 at 2017-12-19 20:04:14 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.29ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/vehicles" for 127.0.0.1 at 2017-12-19 20:04:35 -0500
+Processing by Api::V1::VehiclesController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mVehicle Load (0.6ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.65ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/vehicles/2" for 127.0.0.1 at 2017-12-19 20:04:40 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mVehicle Load (0.2ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.3ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/vehicles/2" for 127.0.0.1 at 2017-12-19 20:04:53 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mVehicle Load (0.2ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.35ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-20 15:57:29 -0500
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 1953ms (Views: 1937.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/vehicles" for 127.0.0.1 at 2017-12-20 15:57:33 -0500
+Processing by Api::V1::VehiclesController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mVehicle Load (12.0ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (25.74ms)
+Completed 200 OK in 38ms (Views: 17.5ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/api/v1/vehicles" for 127.0.0.1 at 2017-12-20 15:57:38 -0500
+Processing by Api::V1::VehiclesController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.98ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/vehicles/9" for 127.0.0.1 at 2017-12-20 15:57:39 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.36ms)
+Completed 200 OK in 16ms (Views: 10.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/vehicles" for 127.0.0.1 at 2017-12-20 15:57:40 -0500
+Processing by Api::V1::VehiclesController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.88ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/vehicles/5" for 127.0.0.1 at 2017-12-20 15:57:41 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mVehicle Load (0.5ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.4ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/vehicles" for 127.0.0.1 at 2017-12-20 15:57:42 -0500
+Processing by Api::V1::VehiclesController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.82ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/vehicles/1" for 127.0.0.1 at 2017-12-20 15:57:45 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.31ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/vehicles" for 127.0.0.1 at 2017-12-20 15:57:46 -0500
+Processing by Api::V1::VehiclesController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.89ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/vehicles/6" for 127.0.0.1 at 2017-12-20 15:57:47 -0500
+Processing by Api::V1::VehiclesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT  "vehicles".* FROM "vehicles" WHERE "vehicles"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Vehicle (0.29ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/vehicles" for 127.0.0.1 at 2017-12-20 15:57:49 -0500
+Processing by Api::V1::VehiclesController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT "vehicles".* FROM "vehicles"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.08ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.8ms)
+
+
