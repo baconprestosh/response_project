@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Vehicle.destroy_all
+Technician.destroy_all
 
 vehicles = [
   {
@@ -34,6 +35,33 @@ vehicles = [
     vehicle_make: "Honda",
     vehicle_model: "CRV",
   }
+],
+
+technicians = [
+  {
+    first_name: "Jack",
+    last_name: "Russell"
+  },
+  {
+    first_name: "George",
+    last_name: "Costanza"
+  },
+  {
+    first_name: "Jim",
+    last_name: "Howard"
+  },
+  {
+    first_name: "Jason",
+    last_name: "Prestosh"
+  },
+  {
+    first_name: "Tom",
+    last_name: "Ace"
+  },
+  {
+    first_name: "Scotty",
+    last_name: "McNasty"
+  }
 ]
 
 vehicles.each do |v|
@@ -41,4 +69,10 @@ vehicles.each do |v|
     model_year: v[:model_year],
     vehicle_make: v[:vehicle_make],
     vehicle_model: v[:vehicle_model])
+end
+
+technicians.each do |t|
+  Technician.create(
+    first_name: t[:first_name],
+    last_name: t[:last_name])
 end

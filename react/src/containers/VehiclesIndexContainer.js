@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link, browserHistory } from 'react-router';
 import VehiclesIndexTile from '../components/VehiclesIndexTile';
 import VehicleFormContainer from './VehicleFormContainer';
+import TechnicianFormContainer from './TechnicianFormContainer';
+import TechniciansIndexTile from '../components/TechniciansIndexTile';
 
 class VehiclesIndexContainer extends Component {
   constructor(props) {
@@ -58,7 +60,7 @@ class VehiclesIndexContainer extends Component {
       )
     })
 
-    let button = <Link to={`/vehicles/new`} className='custom-button' id='add-new-vehicle-button'>Submit A New Vehicle</Link>
+    let carButton = <Link to={`/vehicles/new`} className='custom-button' id='add-new-vehicle-button'>Submit A New Vehicle</Link>
 
     return(
       <div>
@@ -66,7 +68,7 @@ class VehiclesIndexContainer extends Component {
           {vehicles}
         </div>
         <div>
-          {button}
+          {carButton}
         </div>
       </div>
     )

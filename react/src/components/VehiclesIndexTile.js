@@ -5,7 +5,7 @@ const VehiclesIndexTile = props => {
 
   return(
     <div className='vehicle-tile'>
-      <Link to={`/vehicles/${props.id}`}><h6>Repair Order</h6></Link>
+      <Link to={`/vehicles/${props.id}`}><h6>Repair Order# {props.id}</h6></Link>
     </div>
   )
 }
