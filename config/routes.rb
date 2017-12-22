@@ -13,6 +13,7 @@ end
 
   resources :vehicles, only: [:index, :show, :new, :create]
   resources :technicians, only: [:index, :show, :new, :create]
+  resources :repairorders, only: [:index, :show, :new, :create]
 
   namespace :api do
     namespace :v1 do
@@ -23,6 +24,12 @@ end
   namespace :api do
     namespace :v1 do
       resources :technicians, only: [:index, :show, :new, :create]
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      resources :repairorders, only: [:index, :show, :new, :create]
     end
   end
 end
