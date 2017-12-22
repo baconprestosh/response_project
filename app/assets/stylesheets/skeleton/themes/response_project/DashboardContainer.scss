@@ -1,22 +1,13 @@
-#tech-container {
+#main-container {
   padding: 2em;
   border-style: solid;
   margin: 5px;
-  width: 400px;
-  float: left;
   align-self: auto;
   margin-left: 100px;
+  margin-right: 100px;
   margin-top: 20px;
-}
-
-#vehicle-container {
-  padding: 2em;
-  border-style: solid;
-  margin: 5px;
-  width: 400px;
-  float: right;
-  align-self: auto;
-  margin-top: 20px;
+  color: white;
+  text-decoration: none;
 }
 
 h1 {
@@ -28,4 +19,9 @@ h1 {
 
 #utility-nav {
   background-color: grey;
+}
+
+body {
+  background-color: #5b6d8c;
+  color: white;
 }
