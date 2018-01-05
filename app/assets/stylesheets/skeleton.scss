@@ -4,31 +4,28 @@
 // Import Google Fonts
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,600,700,800');
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
 
 // Import Custom Theme Styles
 @import 'skeleton/themes/response_project/*';
 
-.custom-button, input[type='submit'] {
-  padding: 7px 15px;
-  display: inline-block;
-  border: 1px solid;
-  vertical-align: middle;
-  margin: 0 0 0 20px;
-  color: rgba(250,240,230,1);
-  text-decoration: none;
-  transition: all .1s ease-in;
-  height: auto;
-  line-height: 100%;
-  font-family: 'Raleway';
-  cursor: pointer;
-  border-radius: 0px;
-  text-transform: uppercase;
-  font-size: 2rem;
-  font-weight: normal;
 
-  &:hover{
-    background-color: rgba(250,240,230,1);
-    color: #211216;
+// Overwrite any theme styles
+.custom-button, input[type='submit'] {
+  border:0px;
+  outline:none;
+  border-radius:0px;
+  padding:0;
+  font-size:2rem;
+  font-weight:$bold;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  background:$main;
+  color:$white;
+  transition:all.5s ease;
+  -webkit-appearance: none;
+  &:hover, &:focus {
+    background:$main-dark;
   }
 }
 
@@ -36,6 +33,7 @@
   position: relative;
   float: left;
   padding: 5px;
+  padding-left: 20px;
   display: inline-block;
   border: 1px solid;
   vertical-align: middle;
@@ -53,7 +51,31 @@
   font-weight: normal;
 
   &:hover{
-    background-color: rgba(250,240,230,1);
-    color: #211216;
+    background-color: $main-dark;
+    color: $main;
   }
+}
+
+#user-buttons {
+  float: right;
+  margin-right: 30px;
+  color: $main-dark;
+}
+
+#add-new-repairorder-button {
+  text-align: right;
+  width: 33%;
+  display: inline-block;
+}
+
+#add-new-technician-button {
+  text-align: center;
+  width: 33%;
+  display: inline-block;
+}
+
+#add-new-vehicle-button {
+  text-align: left;
+  width: 33%;
+  display: inline-block;
 }

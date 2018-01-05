@@ -3,14 +3,14 @@ var config = {
         path: __dirname + '/src/main.js',
   },
   output: {
-        path: __dirname + '/../app/assets/javascripts',
+    path: __dirname + '/../app/assets/javascripts',
     filename: 'bundle.js'
   },
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
+        exclude: /node_modules(?!\/react-calendar-timeline)/,
         loader: 'babel-loader'
       }
     ]

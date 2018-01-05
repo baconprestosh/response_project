@@ -15,7 +15,4 @@
 @import "../../../node_modules/skeleton-sass-official/skeleton/themes/fresh/grid"; // renamed from skeleton in version 3.1
 
 // 6. import extras to be used in skeleton.scss
-// @import "my/extra/_component.scss";
-// @import "../VenueIndexTile";
-// @import "../utility-nav";
-// @import "../NavBar";
+@import "../../../node_modules/react-calendar-timeline/lib/lib/Timeline";

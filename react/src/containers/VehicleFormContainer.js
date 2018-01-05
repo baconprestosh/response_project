@@ -119,33 +119,33 @@ class VehicleFormContainer extends Component {
 
   render() {
     return(
-      <div className='vehicle-form'>
+      <div className='form'>
         <form className="new-vehicle-form callout" onSubmit={this.handleFormSubmit}>
           <div className='row'>
             <div className="six columns">
               <TextField
                 content={this.state.modelYear}
-                label="Vehicle Year*"
+                label="Vehicle Year"
                 name="modelYear"
                 onChange={this.handleChange}
               />
               <TextField
                 content={this.state.vehicleMake}
-                label="Make*"
+                label="Make"
                 name="vehicleMake"
                 onChange={this.handleChange}
               />
               <TextField
                 content={this.state.vehicleModel}
-                label="Model*"
+                label="Model"
                 name="vehicleModel"
                 onChange={this.handleChange}
               />
             </div>
           </div>
-          <div className="button-group row">
-            <button className="custom-button" onClick={this.handleClearForm} >Clear</button>
-            <input className="custom-button" type="submit" value="Submit" />
+          <div className="row">
+            <button className="custom-button one-half column" onClick={this.handleClearForm} >Clear</button>
+            <button className="custom-button one-half column" type="submit" value="Submit" >Submit</button>
           </div>
         </form>
       </div>

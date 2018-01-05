@@ -12,17 +12,19 @@
       <p class="flash notice"> <%= notice %> </p>
       <p class="flash alert"> <%= alert %> </p>
       <div id="user-buttons">
-      <% if !current_user %>
-        <%= link_to "Sign In", new_user_session_path, {class: 'util-button'} %>
-        <%= link_to "Sign Up", new_user_registration_path, class: 'util-button' %>
-      <% else %>
-        <div id="signed_in">
-          <a href='<%= edit_user_registration_path %>' >
-          <%= "#{current_user.first_name}" %>
-        </a>
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'util-button' %>
-        </div>
-      <% end %>
+        <% if params["action"] != "new" && params["controller"] != "devise/registrations" %>
+          <% if !current_user %>
+            <%= link_to "Sign Up", new_user_registration_path, class: 'util-button' %> |
+            <%= link_to "Log In", new_user_session_path, {class: 'util-button'} %>
+            <% else %>
+              <div id="signed_in">
+                <a href='<%= edit_user_registration_path %>' >
+                  <%= "#{current_user.first_name}" %>
+                </a>
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'util-button' %>
+              </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <%= yield %>

@@ -115,27 +115,27 @@ class TechnicianFormContainer extends Component {
 
   render() {
     return(
-      <div className='technician-form'>
+      <div className='form'>
         <form className="new-technician-form callout" onSubmit={this.handleFormSubmit}>
           <div className='row'>
             <div className="six columns">
               <TextField
                 content={this.state.firstName}
-                label="First Name*"
+                label="First Name"
                 name="firstName"
                 onChange={this.handleChange}
               />
               <TextField
                 content={this.state.lastName}
-                label="Last Name*"
+                label="Last Name"
                 name="lastName"
                 onChange={this.handleChange}
               />
             </div>
           </div>
-          <div className="button-group row">
-            <button className="custom-button" onClick={this.handleClearForm} >Clear</button>
-            <input className="custom-button" type="submit" value="Submit" />
+          <div className="row">
+            <button className="custom-button one-half column" onClick={this.handleClearForm} >Clear</button>
+            <button className="custom-button one-half column" type="submit" value="Submit" >Submit</button>
           </div>
         </form>
       </div>

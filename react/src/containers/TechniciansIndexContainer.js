@@ -57,7 +57,7 @@ class TechniciansIndexContainer extends Component {
       )
     })
 
-    let button = <Link to={`/technicians/new`} className='custom-button' id='add-new-technician-button'>Add A New Tech</Link>
+    let button = <Link to={`/technicians/new`} className='custom-button'>Add A New Tech</Link>
 
     return(
       <div>

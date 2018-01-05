@@ -121,7 +121,7 @@ class RepairorderFormContainer extends Component {
 
   render() {
     return(
-      <div className='repairorder-form'>
+      <div className='form'>
         <form className="new-repairorder-form callout" onSubmit={this.handleFormSubmit}>
           <div className='row'>
             <div className="six columns" id="whatever">
@@ -145,9 +145,9 @@ class RepairorderFormContainer extends Component {
               />
             </div>
           </div>
-          <div className="button-group row">
-            <button className="custom-button" onClick={this.handleClearForm} >Clear</button>
-            <input className="custom-button" type="submit" value="Submit" />
+          <div className="row">
+            <button className="custom-button one-half column" onClick={this.handleClearForm} >Clear</button>
+            <button className="custom-button one-half column" type="submit" value="Submit">Submit</button>
           </div>
         </form>
       </div>
