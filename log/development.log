@@ -29142,3 +29142,78 @@ Processing by VehiclesController#index as HTML
 Completed 200 OK in 820ms (Views: 818.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-01-05 12:26:57 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 4098ms (Views: 4082.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/technicians" for 127.0.0.1 at 2018-01-05 12:27:02 -0500
+Processing by Api::V1::TechniciansController#index as */*
+[active_model_serializers]   [1m[36mTechnician Load (11.6ms)[0m  [1m[34mSELECT "technicians".* FROM "technicians"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (24.8ms)
+Completed 200 OK in 39ms (Views: 19.0ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/api/v1/technicians" for 127.0.0.1 at 2018-01-05 12:29:30 -0500
+Processing by Api::V1::TechniciansController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTechnician Load (0.4ms)[0m  [1m[34mSELECT "technicians".* FROM "technicians"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.45ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 12:30:32 -0500
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 933ms (Views: 930.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/repairorders" for 127.0.0.1 at 2018-01-05 12:31:51 -0500
+Processing by Api::V1::RepairordersController#create as */*
+  Parameters: {"body_hours"=>"10.6", "paint_hours"=>"9.4", "reassembly_hours"=>"4.7", "repairorder"=>{"body_hours"=>"10.6", "paint_hours"=>"9.4", "reassembly_hours"=>"4.7"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.4ms)[0m  [1m[32mINSERT INTO "repairorders" ("body_hours", "paint_hours", "reassembly_hours", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body_hours", 10.6], ["paint_hours", 9.4], ["reassembly_hours", 4.7], ["created_at", "2018-01-05 17:31:51.961188"], ["updated_at", "2018-01-05 17:31:51.961188"]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Repairorder (0.31ms)
+Completed 200 OK in 32ms (Views: 9.6ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/api/v1/repairorders" for 127.0.0.1 at 2018-01-05 12:31:51 -0500
+Processing by Api::V1::RepairordersController#index as */*
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRepairorder Load (6.4ms)[0m  [1m[34mSELECT "repairorders".* FROM "repairorders"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.0ms)
+Completed 200 OK in 12ms (Views: 4.2ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 21:22:43 -0500
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 926ms (Views: 924.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-06 11:11:42 -0500
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by VehiclesController#index as HTML
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/technicians" for 127.0.0.1 at 2018-01-06 11:11:51 -0500
+Processing by Api::V1::TechniciansController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTechnician Load (0.3ms)[0m  [1m[34mSELECT "technicians".* FROM "technicians"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.11ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.8ms)
+
+
